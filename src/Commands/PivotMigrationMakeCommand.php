@@ -86,7 +86,7 @@ class PivotMigrationMakeCommand extends GeneratorCommand
 
         return $this->replacePivotTableName($stub)
             ->replaceSchema($stub)
-            ->replaceClass($stub, $name);
+            ->replaceClass($stub, $this->parseName($name));
     }
 
     /**
@@ -120,7 +120,7 @@ class PivotMigrationMakeCommand extends GeneratorCommand
 
         return $this;
     }
-    
+
     /**
      * Replace the class name for the given stub.
      *
